@@ -21,6 +21,7 @@
 
 .accordion-block__description {
     color: #6b7280;
+    line-height: 1.7;
 }
 
 .accordion-block__title {
@@ -40,15 +41,28 @@
     gap: 16px;
     justify-content: space-between;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .accordion-block__faq-answer {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 0;
+    color: #6b7280;
+    line-height: 1.6;
+    transition: max-height 0.8s ease, padding 0.8s ease, margin-top 0.8s ease;
+}
+
+.accordion-block__faq.active .accordion-block__faq-answer {
+    padding-top: 48px;
+    padding-bottom: 8px;
 }
 
 .accordion-block__faq-chevron-down {
     width: 24px;
     height: 24px;
+    transition: transform 0.8s ease;
+    flex-shrink: 0;
 }
 
 @media (min-width: 1024px) {
