@@ -30,6 +30,7 @@
 .card-block__cards {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
+    gap: 0;
 }
 
 .card-block__card {
@@ -37,6 +38,8 @@
     color: inherit;
     padding: 24px;
     border: 1px solid #dcdfe4;
+    margin-left: -1px;
+    margin-top: -1px;
     transition: all 0.3s ease;
 }
 
