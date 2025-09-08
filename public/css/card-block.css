@@ -75,7 +75,6 @@
     margin-top: 32px;
     float: right;
     margin-bottom: 32px;
-    opacity: 0;
     transform: translateX(-10px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
@@ -107,5 +106,9 @@
         width: 100%;
         height: auto;
         object-fit: cover;
+    }
+
+    .card-block__card-arrow {
+        opacity: 0;
     }
 }
