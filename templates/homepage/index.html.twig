@@ -21,7 +21,9 @@
             {% for card in card_block.cards %}
                 {% if card.isActive %}
                 <a class="card-block__card" href="{{ card.linkUrl }}">
-                    <img src="{{ asset('images/' ~ card.image) }}" alt="{{ card.title }}" class="card-block__card-image">
+                    <div class="card-block__card-image-wrapper">
+                        <img src="{{ asset('images/' ~ card.image) }}" alt="{{ card.title }}" class="card-block__card-image">
+                    </div>
                     <h4 class="card-block__card-title">{{ card.title }}</h4>
                     <p class="card-block__card-text">{{ card.text }}</p>
                     <img src="{{ asset('icons/right-arrow.png') }}" alt="Arrow right" class="card-block__card-arrow">
