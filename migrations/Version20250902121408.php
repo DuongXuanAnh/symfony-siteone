@@ -20,7 +20,7 @@ final class Version20250902121408 extends AbstractMigration
     public function up(Schema $schema): void
     {
         $this->addSql("INSERT INTO heroes (background_image, title, text, is_active, created_at) VALUES
-            ('hero-bg.jpg', 'Vítejte v SiteOne', 'Objevte nejnovější trendy a inovace, které formují budoucnost digitálního světa. Jsme tu, abychom vás provedli cestou k úspěchu.', true, NOW())
+            ('hero-background.webp', 'Vítejte\n v SiteOne', 'Objevte nejnovější trendy a inovace, které formují budoucnost digitálního světa. Jsme tu, abychom vás provedli cestou k úspěchu.', true, NOW())
         ");
     }
 

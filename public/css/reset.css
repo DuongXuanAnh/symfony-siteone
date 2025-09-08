@@ -2,3 +2,29 @@
  * CSS Reset a základní styly
  * Implementujte základní reset stylů
  */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", "Avenir", "Futura", sans-serif !important;
+    line-height: 1;
+    color: #000;
+}
+
+.container {
+    max-width: 1760px;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+@media (min-width: 480px) {
+    .container {
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+    }
+}

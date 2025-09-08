@@ -5,11 +5,12 @@
 {% block body %}
     <!-- Hero komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
     {% if hero %}
-    <div>
-        <span>{{ asset('images/' ~ hero.backgroundImage) }}</span>
-        <span>{{ hero.title }}</span>
-        <span>{{ hero.text }}</span>
-    </div>
+    <section class="hero" style="background-image: url('{{ asset('images/' ~ hero.backgroundImage) }}');">
+            <div class="hero__content container">
+                <h1 class="hero__title">{{ hero.title }}</h1>
+                <p class="hero__text">{{ hero.text }}</p>
+            </div>
+    </section>
     {% endif %}
 
     <!-- CardBlock komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
