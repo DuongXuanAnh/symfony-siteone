@@ -11,3 +11,62 @@
  * Responzivní design pro desktop a mobil (breakpoint 480px)
  * JavaScript funkčnost pro otevírání/zavírání FAQ položek
  */
+
+.accordion-block {
+    padding-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.accordion-block__description {
+    color: #6b7280;
+}
+
+.accordion-block__title {
+    font-size: 28px;
+    margin-bottom: 32px;
+}
+
+.accordion-block__faq {
+    padding: 32px 0px;
+    border-bottom: 1px solid #dcdfe4;
+}
+
+.accordion-block__faq-question {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.accordion-block__faq-answer {
+    display: none;
+}
+
+.accordion-block__faq-chevron-down {
+    width: 24px;
+    height: 24px;
+}
+
+@media (min-width: 1024px) {
+    .accordion-block {
+        flex-direction: row;
+        gap: 96px;
+    }
+    .accordion-block__title {
+        margin-top: 32px;
+    }
+
+    .accordion-block__title-description {
+        max-width: 560px;
+    }
+    .accordion-block__faq-question {
+        flex-grow: 1;
+    }
+    .accordion-block__faqs {
+        width: 100%;
+    }
+}

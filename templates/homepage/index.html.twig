@@ -36,17 +36,21 @@
 
     <!-- Accordion komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
     {% if accordion_block %}
-    <div>
-        <span>{{ accordion_block.title }}</span>
-        <span>{{ accordion_block.description }}</span>
-        <div>
+    <section class="accordion-block container">
+        <div class="accordion-block__title-description">
+            <h2 class="accordion-block__title">{{ accordion_block.title }}</h2>
+            <p class="accordion-block__description">{{ accordion_block.description }}</p>
+        </div>
+        <div class="accordion-block__faqs">
             {% for faq in featured_faqs %}
-            <div>
-                <span>{{ faq.question }}</span>
-                <span>{{ faq.answer }}</span>
+            <div class="accordion-block__faq"   >
+                <div class="accordion-block__faq-question">
+                <span>{{ faq.question }}</span> 
+                <img src="{{ asset('icons/chevron-down.png') }}" alt="Plus" class="accordion-block__faq-chevron-down"></div>
+                <div class="accordion-block__faq-answer">{{ faq.answer }}</div>
             </div>
             {% endfor %}
         </div>
-    </div>
+    </section>
     {% endif %}
 {% endblock %}
