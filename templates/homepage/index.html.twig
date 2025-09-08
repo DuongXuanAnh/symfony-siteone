@@ -15,21 +15,21 @@
 
     <!-- CardBlock komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
     {% if card_block %}
-    <div>
-        <span>{{ card_block.title }}</span>
-        <div>
+    <section class="card-block container">
+        <h2 class="card-block__title">{{ card_block.title }}</h2>
+        <div class="card-block__cards">
             {% for card in card_block.cards %}
                 {% if card.isActive %}
-                <div>
-                    <span>{{ asset('images/' ~ card.image) }}</span>
-                    <span>{{ card.title }}</span>
-                    <span>{{ card.text }}</span>
-                    <span>{{ card.linkUrl }}</span>
-                </div>
+                <a class="card-block__card" href="{{ card.linkUrl }}">
+                    <img src="{{ asset('images/' ~ card.image) }}" alt="{{ card.title }}" class="card-block__card-image">
+                    <h4 class="card-block__card-title">{{ card.title }}</h4>
+                    <p class="card-block__card-text">{{ card.text }}</p>
+                    <img src="{{ asset('icons/right-arrow.png') }}" alt="Arrow right" class="card-block__card-arrow">
+                </a>
                 {% endif %}
             {% endfor %}
         </div>
-    </div>
+    </section>
     {% endif %}
 
     <!-- Accordion komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
