@@ -12,7 +12,8 @@
  */
 
 .hero {
-    height: 100vh;
+    height: calc(100vh - 80px);
+    margin-top: 80px;
     background-size: cover;
     background-position: 40% center;
     background-repeat: no-repeat;
@@ -30,7 +31,7 @@
 
 .hero__title {
     color: #fff;
-    font-size: 52px;
+    font-size: 44px;
     font-weight: 600;
     white-space: pre-line;
 }
@@ -39,7 +40,7 @@
     color: #fff;
     max-width: 315px;
     line-height: 1.7;
-    font-size: 18px;
+    font-size: 14px;
     letter-spacing: 0.6px;
 }
 
