@@ -61,4 +61,7 @@
     .hero__title {
         font-size: 96px;
     }
+    .hero__text {
+        font-size: 18px;
+    }
 }

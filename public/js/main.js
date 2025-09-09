@@ -46,3 +46,30 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Smooth scroll implementation for menu anchor links with 80px offset
+document.addEventListener("DOMContentLoaded", function () {
+  const menuItems = document.querySelectorAll(".menu-item");
+
+  menuItems.forEach((menuItem) => {
+    menuItem.addEventListener("click", function (e) {
+      const href = this.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        e.preventDefault();
+
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - 80;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      }
+    });
+  });
+});

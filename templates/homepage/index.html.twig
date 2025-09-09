@@ -15,7 +15,7 @@
 
     <!-- CardBlock komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
     {% if card_block %}
-    <section class="card-block container">
+    <section class="card-block container" id="clanky">
         <h2 class="card-block__title">{{ card_block.title }}</h2>
         <div class="card-block__cards">
             {% for card in card_block.cards %}
@@ -36,7 +36,7 @@
 
     <!-- Accordion komponenta - implementujte HTML strukturu a stylování podle Figma designu -->
     {% if accordion_block %}
-    <section class="accordion-block container">
+    <section class="accordion-block container" id="faq">
         <div class="accordion-block__title-description">
             <h2 class="accordion-block__title">{{ accordion_block.title }}</h2>
             <p class="accordion-block__description">{{ accordion_block.description }}</p>
