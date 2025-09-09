@@ -11,7 +11,7 @@
  *    - Příslušné ARIA atributy pro přístupnost
  */
 
-// Implementace hamburger menu toggle pro mobilní zobrazení
+// Implementation of hamburger menu toggle for mobile view
 document.addEventListener("DOMContentLoaded", function () {
   const hamburgerMenu = document.querySelector(".hamburger-menu");
   const menuItems = document.querySelector(".menu-items");
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Implementace accordion funkcionality
+// Implementation of accordion functionality
 document.addEventListener("DOMContentLoaded", function () {
   const questions = document.querySelectorAll(".accordion-block__faq-question");
 
@@ -95,4 +95,38 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
+
+// Navbar hide on scroll down and show on scroll up
+document.addEventListener("DOMContentLoaded", function () {
+  const navbar = document.querySelector(".header-data");
+  let lastScrollTop = 0;
+  let scrollThreshold = 40;
+  let isScrolling = false;
+
+  if (navbar) {
+    window.addEventListener("scroll", function () {
+      if (!isScrolling) {
+        window.requestAnimationFrame(function () {
+          const currentScrollTop =
+            window.pageYOffset || document.documentElement.scrollTop;
+
+          if (Math.abs(currentScrollTop - lastScrollTop) > scrollThreshold) {
+            if (
+              currentScrollTop > lastScrollTop &&
+              currentScrollTop > scrollThreshold
+            ) {
+              navbar.classList.add("header-hidden");
+            } else if (currentScrollTop < lastScrollTop) {
+              navbar.classList.remove("header-hidden");
+            }
+            lastScrollTop = currentScrollTop;
+          }
+
+          isScrolling = false;
+        });
+      }
+      isScrolling = true;
+    });
+  }
 });
