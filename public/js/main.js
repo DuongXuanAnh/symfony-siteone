@@ -16,19 +16,42 @@ document.addEventListener("DOMContentLoaded", function () {
   const hamburgerMenu = document.querySelector(".hamburger-menu");
   const menuItems = document.querySelector(".menu-items");
 
+  let menuOverlay = document.querySelector(".menu-overlay");
+  if (!menuOverlay) {
+    menuOverlay = document.createElement("div");
+    menuOverlay.className = "menu-overlay";
+    document.body.appendChild(menuOverlay);
+  }
+
+  function openMenu() {
+    menuItems.classList.add("menu-open");
+    menuOverlay.classList.add("overlay-visible");
+    document.body.classList.add("menu-open");
+  }
+
+  function closeMenu() {
+    menuItems.classList.remove("menu-open");
+    menuOverlay.classList.remove("overlay-visible");
+    document.body.classList.remove("menu-open");
+  }
+
   if (hamburgerMenu && menuItems) {
     hamburgerMenu.addEventListener("click", function () {
       if (menuItems.classList.contains("menu-open")) {
-        menuItems.classList.remove("menu-open");
+        closeMenu();
       } else {
-        menuItems.classList.add("menu-open");
+        openMenu();
       }
+    });
+
+    menuOverlay.addEventListener("click", function () {
+      closeMenu();
     });
 
     const menuItemLinks = document.querySelectorAll(".menu-item");
     menuItemLinks.forEach((link) => {
       link.addEventListener("click", function () {
-        menuItems.classList.remove("menu-open");
+        closeMenu();
       });
     });
   }
