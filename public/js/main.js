@@ -11,6 +11,29 @@
  *    - Příslušné ARIA atributy pro přístupnost
  */
 
+// Implementace hamburger menu toggle pro mobilní zobrazení
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerMenu = document.querySelector(".hamburger-menu");
+  const menuItems = document.querySelector(".menu-items");
+
+  if (hamburgerMenu && menuItems) {
+    hamburgerMenu.addEventListener("click", function () {
+      if (menuItems.classList.contains("menu-open")) {
+        menuItems.classList.remove("menu-open");
+      } else {
+        menuItems.classList.add("menu-open");
+      }
+    });
+
+    const menuItemLinks = document.querySelectorAll(".menu-item");
+    menuItemLinks.forEach((link) => {
+      link.addEventListener("click", function () {
+        menuItems.classList.remove("menu-open");
+      });
+    });
+  }
+});
+
 // Implementace accordion funkcionality
 document.addEventListener("DOMContentLoaded", function () {
   const questions = document.querySelectorAll(".accordion-block__faq-question");

@@ -30,6 +30,15 @@
 .hamburger-menu {
     width: 36px;
     height: auto;
+    cursor: pointer;
+}
+
+.menu-items.menu-open {
+    display: flex;
+}
+
+.menu-items.menu-closed {
+    display: none;
 }
 
 .menu-items {
