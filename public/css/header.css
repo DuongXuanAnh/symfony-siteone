@@ -6,3 +6,100 @@
  * Breakpoint pro mobilní zobrazení: 480px
  * Na mobilech se menu skrývá do hamburger menu
  */
+.header-data {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: #fff;
+    padding: 16px 0;
+}
+.header-data-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 24px;
+}
+
+.logo-url {
+    width: 80px;
+    height: auto;
+}
+
+.hamburger-menu {
+    width: 36px;
+    height: auto;
+}
+
+.menu-items {
+    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    padding-bottom: 32px;
+}
+
+.menu-item {
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    padding: 16px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .header-data-mobile {
+        padding: 16px 0;
+    }
+
+    .header-data-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+
+    .menu-items {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        gap: 48px;
+    }
+
+    .menu-item {
+        border: none;
+        padding: 0;
+        margin: 0;
+        min-width: fit-content;
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .logo-url {
+        width: 100px;
+        height: auto;
+    }
+
+    .menu-items {
+        gap: 64px;
+    }
+}

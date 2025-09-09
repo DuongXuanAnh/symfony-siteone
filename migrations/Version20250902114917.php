@@ -21,10 +21,10 @@ final class Version20250902114917 extends AbstractMigration
     {
         $this->addSql("INSERT INTO menu_items (name, url, order_index, target, is_active, created_at) VALUES
             ('Domů', '/', 1, '_self', true, NOW()),
-            ('O nás', '#', 2, '_self', true, NOW()),
-            ('Články', '#', 3, '_self', true, NOW()),
-            ('FAQ', '#', 4, '_self', true, NOW()),
-            ('Kontakt', '#', 4, '_self', true, NOW())
+            ('O nás', '#o-nas', 2, '_self', true, NOW()),
+            ('Články', '#clanky', 3, '_self', true, NOW()),
+            ('FAQ', '#faq', 4, '_self', true, NOW()),
+            ('Kontakt', '#kontakt', 5, '_self', true, NOW())
         ");
     }
 
